@@ -1,0 +1,28 @@
+
+---
+
+## `docs/design.md` (Design Doc)
+
+```md
+# Design: LLM Vector Cache
+
+## Purpose
+Build a self-contained, high-performance vector cache system for use in AI pipelines, with smart eviction, search, and snapshot support.
+
+## Key Concepts
+- **Cosine similarity** for search
+- **LRU policy** for memory control
+- **TTL** for freshness
+- **In-memory only**, with optional disk persistence
+
+## Trade-offs
+- Not scalable across nodes (MVP is single-process)
+- Exact search (for now) — can later add ANN support
+- Python-only (not bound to Redis... yet)
+
+## Roadmap
+- [x] MVP with core add/search/evict
+- [ ] Metadata filters
+- [ ] Parallel shard support
+- [ ] Faiss/HNSWlib integration
+- [ ] Redis module port (via CFFI or C)
