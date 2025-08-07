@@ -1,6 +1,7 @@
 import argparse
 from engine.store import VectorStore
 
+
 store = VectorStore(max_size=1000)
 
 parser = argparse.ArgumentParser()
@@ -23,3 +24,12 @@ elif args.command == "search":
     results = store.search(args.vector, args.topk)
     for id, score in results:
         print(f"{id}: {score:.4f}")
+
+# cli/main.py
+
+def main():
+    print("✅ CLI works!")
+
+# Optional: test if run directly
+if __name__ == "__main__":
+    main()
