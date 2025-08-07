@@ -1,0 +1,9 @@
+[project]
+name = "llm_vector_cache"
+version = "0.1.0"
+description = "In-memory vector store with LRU, TTL, and similarity search."
+authors = [{name = "Your Name", email = "you@example.com"}]
+requires-python = ">=3.9"
+
+[tool.setuptools.packages.find]
+where = ["engine"]
